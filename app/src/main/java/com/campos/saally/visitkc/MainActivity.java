@@ -26,6 +26,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    //public static final String str = "string";
     ArrayList<com.campos.saally.visitkc.Activity> data = new ArrayList<>();
 
     @Override
@@ -45,6 +46,15 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(MainActivity.this, data.get(position).description + position, Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(view.getContext(), activity_page.class);
+                i.putExtra("Name", data.get(position).getName());
+                i.putExtra("Address", data.get(position).getAddress());
+                i.putExtra("Phone", data.get(position).getPhone_number());
+                i.putExtra("Website", data.get(position).getWebsite());
+                i.putExtra("Price", data.get(position).getPrice());
+                i.putExtra("Range", data.get(position).getPrice_range());
+                i.putExtra("Description", data.get(position).getDescription());
+                i.putExtra("Hours", data.get(position).getHours());
+                i.putExtra("Email", data.get(position).getEmail());
                 startActivityForResult(i,0);
             }
         });
