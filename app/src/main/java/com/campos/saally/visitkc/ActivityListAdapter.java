@@ -39,10 +39,10 @@ public class ActivityListAdapter extends ArrayAdapter<Activity> {
 
         //Create textview items and set values
         TextView tvName = (TextView) convertView.findViewById(R.id.textView2);
-        TextView tvPrice = (TextView) convertView.findViewById(R.id.textView3);
+        //TextView tvPrice = (TextView) convertView.findViewById(R.id.textView3);
 
         tvName.setText(name);
-        tvPrice.setText(priceRange);
+        //tvPrice.setText(priceRange);
 
         return convertView;
     }

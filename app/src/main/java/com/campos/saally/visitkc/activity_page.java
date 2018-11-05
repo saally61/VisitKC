@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.content.Intent;
+import android.text.method.ScrollingMovementMethod;
+
 
 import org.w3c.dom.Text;
 
@@ -24,6 +26,8 @@ public class activity_page extends AppCompatActivity {
         TextView description = (TextView) findViewById(R.id.textViewDescription);
         String theDescription = intent.getStringExtra("Description");
         description.setText(theDescription);
+        description.setMovementMethod(new ScrollingMovementMethod());
+
 
         TextView address = (TextView) findViewById(R.id.textViewAddress);
         String theAddress = intent.getStringExtra("Address");

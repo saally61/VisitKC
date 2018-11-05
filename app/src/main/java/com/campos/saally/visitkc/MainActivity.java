@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         com.campos.saally.visitkc.Activity act2 = new com.campos.saally.visitkc.Activity(
                 "Sea Life Aquarium",
                 "2475 Grand Blvd. Kansas City, MO 64108",
-                "816-471-4FUN (4386)",
+                "816-471-4386",
                 "https://www.visitsealife.com/kansas-city/visit-kc/",
                 "$20 adult, $16 child",
                 "mid",
@@ -75,11 +76,12 @@ public class MainActivity extends AppCompatActivity {
                 );
         act2.setHours("10am to 7pm ");
         act2.setEmail("KCGroups@merlinentertainments.biz");
+        act2.addTag(Arrays.asList("School","Kids & Family","Animals","Indoor"));
 
         com.campos.saally.visitkc.Activity act3 = new com.campos.saally.visitkc.Activity(
                 "KC Zoo",
                 "6800 Zoo Dr. Kansas City, MO 64132",
-                "(816) 595-1234",
+                "816-595-1234",
                 "http://www.kansascityzoo.org/",
                 "$16 adults $15 senior 55 and older $13 children ages 3-11",
                 "mid",
@@ -87,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                 );
         act3.setHours("Weekdays: 9:30am - 4pm Weekends: 9:30am - 5pm");
         act3.setEmail("askthezoo@fotzkc.org");
+        act2.addTag(Arrays.asList("School","Kids & Family","Animals","Outdoor"));
 
         com.campos.saally.visitkc.Activity act4 = new com.campos.saally.visitkc.Activity(
                 "Deanna Rose Children's Farmstead",
@@ -99,11 +102,12 @@ public class MainActivity extends AppCompatActivity {
                 "The Farmstead brings a frontier farm to families living in the city. Visitors can see more than 250 animals and birds, learn about growing flowers and vegetables, or experience an Indian encampment, a one-room country schoolhouse and a turn-of-the-century main street. Parents will treasure memories of children bottle-feeding baby goats, milking cows and riding horse-drawn wagons through the woods."
                 );
         act4.setHours("9am-5pm");
+        act4.addTag(Arrays.asList("School", "Kids & Family","Animals", "Outdoor"));
 
         com.campos.saally.visitkc.Activity act5 = new com.campos.saally.visitkc.Activity(
                 "Oak Park Mall",
                 "11149 West 95th Street Overland Park, KS 66214",
-                "913.888.4400",
+                "913-888-4400",
                 "http://www.thenewoakparkmall.com/",
                 "\"Free\n" +
                         "(Mid)\"\t",
@@ -111,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 "Browse stores, find deals, and get inspired"
                 );
         act5.setHours("10am-9pm");
+        act5.addTag(Arrays.asList("Shopping", "Clothes", "Shoes", "Family", "Teens") );
 
         com.campos.saally.visitkc.Activity act6 = new com.campos.saally.visitkc.Activity(
                 "Crown Center ",
@@ -122,21 +127,23 @@ public class MainActivity extends AppCompatActivity {
                 "Crown Center is the place for pure entertainment. With exciting events and unique attractions. A center full of locally owned shops and restaurants. And two luxury hotels so you can stay at the center of it all. It’s perfectly located, too … right in the heart of Kansas City. If you’re looking for fun things to do, you’ll find them at Crown Center. See you soon."
                 );
         act6.setHours("Mon-Sat 10am-7pm Sun 12pm-6pm");
+        act6.addTag(Arrays.asList("Shopping", "Family", "Events", "Hotel", "Food") );
 
         com.campos.saally.visitkc.Activity act7 = new com.campos.saally.visitkc.Activity(
                 "Worlds of Fun",
                 "4545 Worlds of Fun Ave, Kansas City, MO 64161",
-                "(816) 454-4545",
+                "816-454-4545",
                 "https://www.worldsoffun.com/",
                 "~$40\t",
                 "high",
                 "Worlds of Fun is a 235-acre amusement park. Admission to Worlds of Fun includes access to Oceans of Fun, a water park adjacent to the amusement park."
                 );
+        act7.addTag(Arrays.asList("Fun", "Kids & Family", "Teens", "Halloween", "All Day"));
 
         com.campos.saally.visitkc.Activity act8 = new com.campos.saally.visitkc.Activity(
                 "The Nelson-Atkins Museum of Art",
                 "4525 Oak St, Kansas City, MO 64111",
-                "816.751.1278",
+                "816-751-1278",
                 "https://www.nelson-atkins.org/",
                 "Free\t",
                 "low",
@@ -145,11 +152,12 @@ public class MainActivity extends AppCompatActivity {
                 );
         act8.setHours("10am-5pm");
         act8.setEmail("ask@nelson-atkins.org");
+        act8.addTag(Arrays.asList("Free", "Art", "Teens", "Adults", "School"));
 
         com.campos.saally.visitkc.Activity act9 = new com.campos.saally.visitkc.Activity(
                 "Legends Outlet",
                 "1843 Village W Pkwy, Kansas City, KS 66109",
-                "(913) 788-3700",
+                "913-788-3700",
                 "https://legendsshopping.com/",
                 "free",
                 "low",
@@ -158,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
         act9.setHours("\"Mon-Sat 10am-9pm\n" +
                 "Sun 11pm-6pm\"");
         act9.setEmail("info@legendsshopping.com");
+        act9.addTag(Arrays.asList("Shopping", "Teens", "Adults", "Outdoor", "Movies", "Entertainment"));
 
         com.campos.saally.visitkc.Activity act10 = new com.campos.saally.visitkc.Activity(
                 "Country Club Plaza ",
@@ -173,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
                 "Fri-Sat: 10am-7pm\n" +
                 "Sun: Noon-5pm\n" +
                 "Restaurant and store hours may vary\"");
+        act10.addTag(Arrays.asList("Shopping", "Teens", "Adults", "Entertaiment", "Movies", "Outdoor"));
 
 
         data.add(act2);

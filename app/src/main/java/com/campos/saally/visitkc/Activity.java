@@ -1,4 +1,8 @@
+
 package com.campos.saally.visitkc;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Activity {
     private String name;
@@ -10,7 +14,7 @@ public class Activity {
     private String description;
     private String email; //optional
     private String hours; //optional
-
+    private List<String> tags = new ArrayList<String>();
 
     public Activity (String name, String address, String phone_number, String website, String price, String price_range, String description) {
         this.name = name;
@@ -21,6 +25,14 @@ public class Activity {
         this.price_range = price_range;
         this.description = description;
     }
+    public List<String> getTags(){ return tags;} //returns a list of tags
+    public void addTag(List<String> newTag) {
+        for (int i = 0; i < newTag.size(); i++) {
+            if (tags.contains(newTag.get(i)) == false) //if tag does not exist in the list
+                tags.add(newTag.get(i)); //tag doesn't exit so add it
+        }
+    }
+
 
     public void setName(String name) {this.name = name;}
     public String getName(){return name;}

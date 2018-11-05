@@ -2,10 +2,24 @@ package com.campos.saally.visitkc;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class ActivityTest {
 
+    @Test
+    public void addTag(){
+        Activity a = new Activity("n","a","pn","w","p","pr","d");
+        a.addTag(Arrays.asList("1","2","1","3"));
+        List<String> actual = Arrays.asList("1","2","3");
+        assertEquals("1", actual.get(0));
+        assertEquals("2", actual.get(1));
+        assertEquals("3", actual.get(2));
+
+    }
     @Test
     public void setName() {
         Activity a = new Activity("n","a","pn","w","p","pr","d");
