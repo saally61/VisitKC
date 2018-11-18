@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -31,6 +32,8 @@ public class ActivityListAdapter extends ArrayAdapter<Activity> {
         //get information
         String name = getItem(position).getName();
         String priceRange = getItem(position).getPrice_range();
+        //int image = getItem(position).getImage();
+        int image = getItem(position).getImage();
 
         //Create the Activity
         //Activity act = new Activity(name);
@@ -39,10 +42,12 @@ public class ActivityListAdapter extends ArrayAdapter<Activity> {
 
         //Create textview items and set values
         TextView tvName = (TextView) convertView.findViewById(R.id.textView2);
-        //TextView tvPrice = (TextView) convertView.findViewById(R.id.textView3);
 
         tvName.setText(name);
-        //tvPrice.setText(priceRange);
+
+
+        ImageView myIV = (ImageView) convertView.findViewById(R.id.MainimageView);
+        myIV.setImageResource(image);
 
         return convertView;
     }

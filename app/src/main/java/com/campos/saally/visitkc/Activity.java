@@ -15,6 +15,8 @@ public class Activity {
     private String email; //optional
     private String hours; //optional
     private List<String> tags = new ArrayList<String>();
+    private int MainImage;
+    private List<Integer> images = new ArrayList<Integer>();
 
     public Activity (String name, String address, String phone_number, String website, String price, String price_range, String description) {
         this.name = name;
@@ -33,6 +35,16 @@ public class Activity {
         }
     }
 
+    public List<Integer> getImages() {return images;}
+    public void addImage(List<Integer> newImage) {
+        for (int i=0; i<newImage.size(); i++){
+            if (images.contains(newImage.get(i))==false)
+                images.add(newImage.get(i));
+        }
+    }
+
+    public int getImage(){return MainImage;}
+    public void setImage(int i) {this.MainImage = i;}
 
     public void setName(String name) {this.name = name;}
     public String getName(){return name;}

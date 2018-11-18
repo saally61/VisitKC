@@ -3,6 +3,7 @@ package com.campos.saally.visitkc;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextClock;
@@ -27,7 +29,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    //public static final String str = "string";
+
     ArrayList<com.campos.saally.visitkc.Activity> data = new ArrayList<>();
 
     @Override
@@ -40,12 +42,11 @@ public class MainActivity extends AppCompatActivity {
         ActivityListAdapter adapter = new ActivityListAdapter(this, R.layout.adapter_view_layout, data);
         mainListView.setAdapter(adapter);
 
-
-
         mainListView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Toast.makeText(MainActivity.this, data.get(position).description + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, data.get(position).getName() + position, Toast.LENGTH_SHORT).show();
+
                 Intent i = new Intent(view.getContext(), activity_page.class);
                 i.putExtra("Name", data.get(position).getName());
                 i.putExtra("Address", data.get(position).getAddress());
@@ -56,10 +57,32 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra("Description", data.get(position).getDescription());
                 i.putExtra("Hours", data.get(position).getHours());
                 i.putExtra("Email", data.get(position).getEmail());
+                //i.putExtra("Image", data.get(position).getImage());
+                for (int n=0; n<data.get(position).getImages().size(); n++){
+                    i.putExtra("Image"+n, data.get(position).getImages().get(n) );
+                }
+                //i.putExtra("ImageCount", data.get(position).getImages().size() );
+
+
                 startActivityForResult(i,0);
             }
         });
 
+
+        Button FilterButton = (Button) findViewById(R.id.FilterButton);
+        FilterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFilter();
+            }
+        });
+
+
+    }
+
+    public void openFilter(){
+        Intent i = new Intent(this, Filters.class);
+        this.startActivity(i);
     }
 
     public void generate_activities(){
@@ -77,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
         act2.setHours("10am to 7pm ");
         act2.setEmail("KCGroups@merlinentertainments.biz");
         act2.addTag(Arrays.asList("School","Kids & Family","Animals","Indoor"));
+        act2.setImage(R.drawable.sealife);
+        act2.addImage(Arrays.asList(R.drawable.sealife, R.drawable.sealife1));
 
         com.campos.saally.visitkc.Activity act3 = new com.campos.saally.visitkc.Activity(
                 "KC Zoo",
@@ -89,7 +114,9 @@ public class MainActivity extends AppCompatActivity {
                 );
         act3.setHours("Weekdays: 9:30am - 4pm Weekends: 9:30am - 5pm");
         act3.setEmail("askthezoo@fotzkc.org");
-        act2.addTag(Arrays.asList("School","Kids & Family","Animals","Outdoor"));
+        act3.addTag(Arrays.asList("School","Kids & Family","Animals","Outdoor"));
+        act3.setImage(R.drawable.kczoo);
+        act3.addImage(Arrays.asList(R.drawable.kczoo, R.drawable.kczoo1));
 
         com.campos.saally.visitkc.Activity act4 = new com.campos.saally.visitkc.Activity(
                 "Deanna Rose Children's Farmstead",
@@ -103,6 +130,9 @@ public class MainActivity extends AppCompatActivity {
                 );
         act4.setHours("9am-5pm");
         act4.addTag(Arrays.asList("School", "Kids & Family","Animals", "Outdoor"));
+        act4.setImage(R.drawable.deannarose);
+        act4.addImage(Arrays.asList(R.drawable.deannarose, R.drawable.deannarose1));
+
 
         com.campos.saally.visitkc.Activity act5 = new com.campos.saally.visitkc.Activity(
                 "Oak Park Mall",
@@ -116,6 +146,9 @@ public class MainActivity extends AppCompatActivity {
                 );
         act5.setHours("10am-9pm");
         act5.addTag(Arrays.asList("Shopping", "Clothes", "Shoes", "Family", "Teens") );
+        act5.setImage(R.drawable.oakpark);
+        act5.addImage(Arrays.asList(R.drawable.oakpark, R.drawable.oakpark1));
+
 
         com.campos.saally.visitkc.Activity act6 = new com.campos.saally.visitkc.Activity(
                 "Crown Center ",
@@ -128,6 +161,9 @@ public class MainActivity extends AppCompatActivity {
                 );
         act6.setHours("Mon-Sat 10am-7pm Sun 12pm-6pm");
         act6.addTag(Arrays.asList("Shopping", "Family", "Events", "Hotel", "Food") );
+        act6.setImage(R.drawable.crowncenter);
+        act6.addImage(Arrays.asList(R.drawable.crowncenter, R.drawable.crowncenter1));
+
 
         com.campos.saally.visitkc.Activity act7 = new com.campos.saally.visitkc.Activity(
                 "Worlds of Fun",
@@ -139,6 +175,9 @@ public class MainActivity extends AppCompatActivity {
                 "Worlds of Fun is a 235-acre amusement park. Admission to Worlds of Fun includes access to Oceans of Fun, a water park adjacent to the amusement park."
                 );
         act7.addTag(Arrays.asList("Fun", "Kids & Family", "Teens", "Halloween", "All Day"));
+        act7.setImage(R.drawable.wof);
+        act7.addImage(Arrays.asList(R.drawable.wof, R.drawable.wof1));
+
 
         com.campos.saally.visitkc.Activity act8 = new com.campos.saally.visitkc.Activity(
                 "The Nelson-Atkins Museum of Art",
@@ -153,6 +192,9 @@ public class MainActivity extends AppCompatActivity {
         act8.setHours("10am-5pm");
         act8.setEmail("ask@nelson-atkins.org");
         act8.addTag(Arrays.asList("Free", "Art", "Teens", "Adults", "School"));
+        act8.setImage(R.drawable.nelson);
+        act8.addImage(Arrays.asList(R.drawable.nelson, R.drawable.nelson1));
+
 
         com.campos.saally.visitkc.Activity act9 = new com.campos.saally.visitkc.Activity(
                 "Legends Outlet",
@@ -167,6 +209,9 @@ public class MainActivity extends AppCompatActivity {
                 "Sun 11pm-6pm\"");
         act9.setEmail("info@legendsshopping.com");
         act9.addTag(Arrays.asList("Shopping", "Teens", "Adults", "Outdoor", "Movies", "Entertainment"));
+        act9.setImage(R.drawable.legends);
+        act9.addImage(Arrays.asList(R.drawable.legends, R.drawable.legends1));
+
 
         com.campos.saally.visitkc.Activity act10 = new com.campos.saally.visitkc.Activity(
                 "Country Club Plaza ",
@@ -182,7 +227,10 @@ public class MainActivity extends AppCompatActivity {
                 "Fri-Sat: 10am-7pm\n" +
                 "Sun: Noon-5pm\n" +
                 "Restaurant and store hours may vary\"");
-        act10.addTag(Arrays.asList("Shopping", "Teens", "Adults", "Entertaiment", "Movies", "Outdoor"));
+        act10.addTag(Arrays.asList("Shopping", "Teens", "Adults", "Entertainment", "Movies", "Outdoor"));
+        act10.setImage(R.drawable.ccplaza);
+        act10.addImage(Arrays.asList(R.drawable.ccplaza, R.drawable.ccplaza1));
+
 
 
         data.add(act2);

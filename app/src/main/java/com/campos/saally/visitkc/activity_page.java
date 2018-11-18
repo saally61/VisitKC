@@ -2,12 +2,16 @@ package com.campos.saally.visitkc;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Intent;
 import android.text.method.ScrollingMovementMethod;
 
 
 import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class activity_page extends AppCompatActivity {
@@ -52,6 +56,28 @@ public class activity_page extends AppCompatActivity {
         TextView email = (TextView) findViewById(R.id.textViewEmail);
         String theEmail = intent.getStringExtra("Email");
         email.setText(theEmail);
+
+
+       /* List<Integer> TheImages = new ArrayList<Integer>();
+        for (int j=0; j< intent.getIntExtra("ImageCount", 0); j++){
+            TheImages.add(intent.getIntExtra("Image"+j, R.drawable.ic_launcher_foreground)); //add the id of the nth image
+        }
+
+        ImageView Image0 = (ImageView) findViewById(TheImages.get(0));
+        Image0.setImageResource(TheImages.get(0));
+
+        ImageView Image1 = (ImageView) findViewById(TheImages.get(1));
+        Image1.setImageResource(TheImages.get(1));*/
+
+
+        ImageView Image0 = (ImageView) findViewById(R.id.ActivityImageView0);
+        int theImage = intent.getIntExtra("Image0",R.drawable.ic_launcher_foreground);
+        Image0.setImageResource(theImage);
+
+        ImageView Image1 = (ImageView) findViewById(R.id.ActivityImageView1);
+        int theImage1 = intent.getIntExtra("Image1",R.drawable.ic_launcher_foreground);
+        Image1.setImageResource(theImage1);
+
 
     }
 }

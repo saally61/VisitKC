@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity_page"></activity>
+        <activity android:name=".activity_page" />
+        <activity android:name=".Filters"></activity>
     </application>
 
 </manifest>
