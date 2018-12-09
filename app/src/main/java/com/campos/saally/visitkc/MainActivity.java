@@ -85,6 +85,12 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(i);
     }
 
+    public ArrayList<FilterItem> FilterListInput = new ArrayList<>();
+
+    public ArrayList<com.campos.saally.visitkc.Activity> FilterActivities(ArrayList<FilterItem> filters, ArrayList<com.campos.saally.visitkc.Activity> TheActivities){
+        return TheActivities;
+    }
+
     public void generate_activities(){
         com.campos.saally.visitkc.Activity act2 = new com.campos.saally.visitkc.Activity(
                 "Sea Life Aquarium",
@@ -99,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 );
         act2.setHours("10am to 7pm ");
         act2.setEmail("KCGroups@merlinentertainments.biz");
-        act2.addTag(Arrays.asList("School","Kids & Family","Animals","Indoor"));
+        act2.addTag(Arrays.asList("School","Kids", "Family","Animals","Indoor"));
         act2.setImage(R.drawable.sealife);
         act2.addImage(Arrays.asList(R.drawable.sealife, R.drawable.sealife1));
 
@@ -114,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 );
         act3.setHours("Weekdays: 9:30am - 4pm Weekends: 9:30am - 5pm");
         act3.setEmail("askthezoo@fotzkc.org");
-        act3.addTag(Arrays.asList("School","Kids & Family","Animals","Outdoor"));
+        act3.addTag(Arrays.asList("School","Kids","Family","Animals","Outdoor"));
         act3.setImage(R.drawable.kczoo);
         act3.addImage(Arrays.asList(R.drawable.kczoo, R.drawable.kczoo1));
 
@@ -124,12 +130,12 @@ public class MainActivity extends AppCompatActivity {
                 "913-897-2360",
                 "https://www.opkansas.org/things-to-see-and-do/deanna-rose-childrens-farmstead/",
 
-                "$3/perons",
+                "$3/person",
                 "low",
                 "The Farmstead brings a frontier farm to families living in the city. Visitors can see more than 250 animals and birds, learn about growing flowers and vegetables, or experience an Indian encampment, a one-room country schoolhouse and a turn-of-the-century main street. Parents will treasure memories of children bottle-feeding baby goats, milking cows and riding horse-drawn wagons through the woods."
                 );
         act4.setHours("9am-5pm");
-        act4.addTag(Arrays.asList("School", "Kids & Family","Animals", "Outdoor"));
+        act4.addTag(Arrays.asList("School", "Kids", "Family","Animals", "Outdoor"));
         act4.setImage(R.drawable.deannarose);
         act4.addImage(Arrays.asList(R.drawable.deannarose, R.drawable.deannarose1));
 
@@ -174,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
                 "high",
                 "Worlds of Fun is a 235-acre amusement park. Admission to Worlds of Fun includes access to Oceans of Fun, a water park adjacent to the amusement park."
                 );
-        act7.addTag(Arrays.asList("Fun", "Kids & Family", "Teens", "Halloween", "All Day"));
+        act7.addTag(Arrays.asList("Fun", "Kids", "Family", "Teens", "Halloween", "All Day"));
         act7.setImage(R.drawable.wof);
         act7.addImage(Arrays.asList(R.drawable.wof, R.drawable.wof1));
 

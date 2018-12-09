@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Visit KC</string>
     <string name="welcome">Welcome to Visit KC, chose what you want to do below:</string>
-    <string name="filter">Apply Filters</string>
+    <string name="Afilter">Apply Filters</string>
     <string name="editFilters">Edit Filters</string>
     <string name="clearFilter">Clear Filters</string>
 </resources>

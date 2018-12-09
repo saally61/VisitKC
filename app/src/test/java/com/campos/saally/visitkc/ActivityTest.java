@@ -5,12 +5,12 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+import com.campos.saally.visitkc.Activity;
 import static org.junit.Assert.*;
 
 public class ActivityTest {
 
-    @Test
+        @Test
     public void addTag(){
         Activity a = new Activity("n","a","pn","w","p","pr","d");
         a.addTag(Arrays.asList("1","2","1","3"));
